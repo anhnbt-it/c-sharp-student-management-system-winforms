@@ -1,0 +1,9 @@
+C:\Users\t1304i_nbtanh\Documents\WF\Projects\ado-example\ado-example\bin\Debug\ado-example.exe.config
+C:\Users\t1304i_nbtanh\Documents\WF\Projects\ado-example\ado-example\bin\Debug\ado-example.exe
+C:\Users\t1304i_nbtanh\Documents\WF\Projects\ado-example\ado-example\bin\Debug\ado-example.pdb
+C:\Users\t1304i_nbtanh\Documents\WF\Projects\ado-example\ado-example\obj\Debug\ado-example.csprojResolveAssemblyReference.cache
+C:\Users\t1304i_nbtanh\Documents\WF\Projects\ado-example\ado-example\obj\Debug\ado_example.frmMain.resources
+C:\Users\t1304i_nbtanh\Documents\WF\Projects\ado-example\ado-example\obj\Debug\ado_example.Properties.Resources.resources
+C:\Users\t1304i_nbtanh\Documents\WF\Projects\ado-example\ado-example\obj\Debug\ado-example.csproj.GenerateResource.Cache
+C:\Users\t1304i_nbtanh\Documents\WF\Projects\ado-example\ado-example\obj\Debug\ado-example.exe
+C:\Users\t1304i_nbtanh\Documents\WF\Projects\ado-example\ado-example\obj\Debug\ado-example.pdb
