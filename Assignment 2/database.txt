@@ -1,0 +1,67 @@
+USE [master]
+
+IF EXISTS (SELECT name FROM master.dbo.sysdatabases WHERE name = N'abc')
+	DROP DATABASE [abc]
+GO
+
+CREATE DATABASE [abc]
+GO
+USE abc
+GO
+
+PRINT 'CREATING TABLE Classes'
+CREATE TABLE [Classes] (
+	[ClassID] [int] IDENTITY (1, 1) NOT NULL ,
+	[ClassName] [nvarchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL ,
+	CONSTRAINT [PK_Classes] PRIMARY KEY  CLUSTERED 
+	(
+		[ClassID]
+	)  ON [PRIMARY] 
+) ON [PRIMARY]
+GO
+
+
+
+
+PRINT 'CREATING TABLE Students'
+CREATE TABLE [Students] (
+	[StudentID] [int] IDENTITY (1, 1) NOT NULL ,
+	[Name] [nvarchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL ,
+	[Age] [tinyint] NULL ,
+	[Address] [nvarchar] (500) COLLATE SQL_Latin1_General_CP1_CI_AS NULL ,
+	[Email] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL ,
+	[Phone] [varchar] (16) COLLATE SQL_Latin1_General_CP1_CI_AS NULL ,
+	[ClassID] [int] NULL ,
+	CONSTRAINT [PK_Students] PRIMARY KEY  CLUSTERED 
+	(
+		[StudentID]
+	)  ON [PRIMARY] ,
+	CONSTRAINT [FK_Students_Classes] FOREIGN KEY 
+	(
+		[ClassID]
+	) REFERENCES [Classes] (
+		[ClassID]
+	)
+) ON [PRIMARY]
+GO
+
+
+
+PRINT 'INSERTING DATA INTO TABLE Classes'
+ALTER TABLE [Classes] NOCHECK CONSTRAINT ALL
+SET IDENTITY_INSERT [Classes] ON
+INSERT INTO [Classes] ([ClassID],[ClassName]) VALUES (1,'C07010G')
+INSERT INTO [Classes] ([ClassID],[ClassName]) VALUES (2,'A0910K')
+INSERT INTO [Classes] ([ClassID],[ClassName]) VALUES (3,'C0908L')
+INSERT INTO [Classes] ([ClassID],[ClassName]) VALUES (4,'A0905L')
+SET IDENTITY_INSERT [Classes] OFF
+ALTER TABLE [Classes] CHECK CONSTRAINT ALL
+
+PRINT 'INSERTING DATA INTO TABLE Students'
+ALTER TABLE [Students] NOCHECK CONSTRAINT ALL
+SET IDENTITY_INSERT [Students] ON
+INSERT INTO [Students] ([StudentID],[Name],[Age],[Address],[Email],[Phone],[ClassID]) VALUES (1,'AQ',19,'56 Hang Dong','aq@gmail.com','88888888',1)
+INSERT INTO [Students] ([StudentID],[Name],[Age],[Address],[Email],[Phone],[ClassID]) VALUES (2,'Barca',15,'77 Hang Ca','barca@yahoo.com','77777777',1)
+INSERT INTO [Students] ([StudentID],[Name],[Age],[Address],[Email],[Phone],[ClassID]) VALUES (3,'Owen',22,'St James Park','owen@gmail.com','66666666',2)
+SET IDENTITY_INSERT [Students] OFF
+ALTER TABLE [Students] CHECK CONSTRAINT ALL
