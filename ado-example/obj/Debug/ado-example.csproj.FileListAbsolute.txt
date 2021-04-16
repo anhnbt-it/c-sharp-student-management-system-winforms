@@ -7,3 +7,4 @@ C:\Users\t1304i_nbtanh\Documents\WF\Projects\ado-example\ado-example\obj\Debug\a
 C:\Users\t1304i_nbtanh\Documents\WF\Projects\ado-example\ado-example\obj\Debug\ado-example.csproj.GenerateResource.Cache
 C:\Users\t1304i_nbtanh\Documents\WF\Projects\ado-example\ado-example\obj\Debug\ado-example.exe
 C:\Users\t1304i_nbtanh\Documents\WF\Projects\ado-example\ado-example\obj\Debug\ado-example.pdb
+C:\Users\t1304i_nbtanh\Documents\WF\Projects\ado-example\ado-example\obj\Debug\ado_example.NewProduct.resources

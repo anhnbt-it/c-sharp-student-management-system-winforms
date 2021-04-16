@@ -28,8 +28,6 @@ namespace ado_example
 
         private void btnAddProduct_Click(object sender, EventArgs e)
         {
-            //Form frmAddProduct = new NewProduct();
-            //frmAddProduct.Show();
             var confirmResult = MessageBox.Show("Are you sure you want to exit?", "Confirm Exit", MessageBoxButtons.YesNo);
             if (confirmResult == DialogResult.Yes)
             {
@@ -146,7 +144,6 @@ namespace ado_example
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
-                MessageBox.Show(ex.Message);
             }
 
         }
@@ -155,8 +152,6 @@ namespace ado_example
         {
             try
             {
-
-
                 if (cboClassName.SelectedIndex != -1)
                 {
 
@@ -177,38 +172,30 @@ namespace ado_example
 
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-
+                Console.WriteLine(ex.Message);
             }
         }
 
         private void lbStudents_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
+        }
+
+        private void btnViewStudent_Click(object sender, EventArgs e)
+        {
             try
             {
                 if (lbStudents.SelectedIndex > -1)
                 {
-                    SqlConnection conn = new SqlConnection(connectionString);
-                    if (conn.State == ConnectionState.Closed)
-                    {
-                        conn.Open();
-                    }
-                    string query = "SELECT * FROM Students WHERE StudentID = " + lbStudents.SelectedValue.ToString();
-                    SqlCommand cmd = new SqlCommand();
-                    cmd.Connection = conn;
-                    cmd.CommandText = query;
-                    cmd.CommandType = CommandType.Text;
-                    SqlDataReader dr = cmd.ExecuteReader();
-                    TextBox txtStudentName = new TextBox();
-                    txtStudentName.Text = dr.GetValue(0).ToString();
-                    MessageBox.Show(txtStudentName.Text);
-                    conn.Close();
+                    Form frmAddProduct = new NewProduct(lbStudents.SelectedValue.ToString());
+                    frmAddProduct.Show();
                 }
             }
             catch (Exception ex)
             {
+                Console.WriteLine(ex.Message);
             }
         }
     }
